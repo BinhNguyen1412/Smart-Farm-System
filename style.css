@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;  /* Use Arial font with a fallback to sans-serif */
+    background-color: #f4f4f9;      /* Set background color */
+    margin: 0;                       /* Remove default margin */
+    padding: 0;                      /* Remove default padding */
+}
+
+.container {
+    width: 80%;                      /* Set container width to 80% */
+    margin: 0 auto;                  /* Center the container horizontally */
+    padding: 20px;                   /* Add padding inside the container */
+    text-align: center;              /* Center text within the container */
+}
+
+h1 {
+    color: #333;                     /* Set the color of the header text */
+    font-size: 2.5rem;               /* Set font size of the header */
+    margin-bottom: 30px;             /* Add space below the header */
+}
+
+.sensor-data {
+    display: grid;                   /* Use grid layout for the sensor data */
+    grid-template-columns: repeat(2, 1fr);  /* Create two equal-width columns */
+    gap: 20px;                       /* Add space between grid items */
+    margin-bottom: 30px;             /* Add space below the sensor data section */
+}
+
+.sensor-item {
+    background-color: #fff;          /* Set background color of each sensor item */
+    padding: 20px;                   /* Add padding inside each item */
+    border-radius: 8px;              /* Round the corners of the item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Add subtle shadow for the item */
+    font-size: 1.2rem;               /* Set font size of text inside the item */
+}
+
+.sensor-item h2 {
+    margin: 0;                       /* Remove margin around the heading */
+    color: #555;                     /* Set color of the heading */
+}
+
+button {
+    padding: 10px 20px;              /* Add padding inside the button */
+    background-color: #4CAF50;       /* Set background color of the button */
+    color: #fff;                     /* Set text color of the button */
+    border: none;                    /* Remove the border from the button */
+    border-radius: 5px;              /* Round the corners of the button */
+    font-size: 1rem;                 /* Set font size of the button */
+    cursor: pointer;                 /* Change cursor to pointer on hover */
+    margin-top: 30px;                /* Add space above the button */
+}
+
+button:hover {
+    background-color: #45a049;       /* Darken the button on hover */
+}
+
+canvas {
+    margin-top: 20px;                 /* Add margin above the canvas */
+}
