@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farm Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #007bff;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .data {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .data h2 {
+            margin-top: 0;
+        }
+        .data .value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Smart Farm Monitoring</h1>
+    </header>
+    <div class="container">
+        <div class="data">
+            <h2>Temperature: <span class="value" id="temperature">Loading...</span></h2>
+            <h2>Humidity: <span class="value" id="humidity">Loading...</span></h2>
+            <h2>Gas Concentration: <span class="value" id="airQuality">Loading...</span></h2>
+            <h2>Water Level: <span class="value" id="waterLevel">Loading...</span></h2>
+        </div>
+    </div>
+
+    <script>
+        setInterval(function() {
+            fetch('/data_endpoint')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('temperature').textContent = data.temperature + 'Â°C';
+                    document.getElementById('humidity').textContent = data.humidity + '%';
+                    document.getElementById('airQuality').textContent = data.air_quality + ' ppm';
+                    document.getElementById('waterLevel').textContent = data.water_level ? 'HIGH' : 'LOW';
+                });
+        }, 500); // Update every 2 seconds
+    </script>
+</body>
+</html>
